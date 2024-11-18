@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> AC-01 Ion-Range </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Exercício 1 -->
+  <ion-title> Exercicio 1 </ion-title>
+
+  <ion-item>
+    <ion-label>Valor do Emprestimo:</ion-label>
+    <ion-range
+      min="1"
+      max="1000"
+      step="1"
+      [(ngModel)]="valorEmprestimo"
+    ></ion-range>
+    <ion-label>{{ valorEmprestimo | currency:'BRL' }}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Taxa de Juros:</ion-label>
+    <ion-range min="0" max="100" step="1" [(ngModel)]="jurosAnual"></ion-range>
+    <ion-label>{{ jurosAnual }}%</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Meses para o pagamento:</ion-label>
+    <ion-range min="1" max="100" step="1" [(ngModel)]="meses"></ion-range>
+    <ion-label>{{ meses }}</ion-label>
+  </ion-item>
+
+  <ion-button expand="block" (click)="calcularJuros()"
+    >Calcular o Total</ion-button
+  >
+  <ion-item>
+    <ion-label>Prestação Mensal: {{ prestacao | currency:'BRL'}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Total a Pagar: {{ totalPagar | currency:'BRL'}}</ion-label>
+  </ion-item>
+
+  <!-- Exercício 2 -->
+
+  <ion-title> Exercicio 2 </ion-title>
+
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="valorProduto"
+      >Preço do Produto:</ion-input
+    >
+  </ion-item>
+  <ion-item>
+    <ion-label>Desconto Desejado:</ion-label>
+    <ion-range
+      min="0"
+      max="50"
+      step="1"
+      [(ngModel)]="descontoDesejado"
+    ></ion-range>
+    <ion-label>{{ descontoDesejado }}%</ion-label>
+  </ion-item>
+  <ion-button expand="block" (click)="desconto()">Calcular o total</ion-button>
+
+  <ion-item>
+    <ion-label>Valor do produto: {{ valorProduto | currency:'BRL'}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label
+      >Valor do produto com desconto: {{ total | currency:'BRL'}}</ion-label
+    >
+  </ion-item>
+</ion-content>

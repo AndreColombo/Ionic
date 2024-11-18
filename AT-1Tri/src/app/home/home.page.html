@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Adivinhar Animal </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- ----------Lista de Animais---------- -->
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Cachorro</ion-label>
+      <ion-label>Gato</ion-label>
+      <ion-label>Papagaio</ion-label>
+      <ion-label>Urso</ion-label>
+      <ion-label>Raposa</ion-label>
+      <ion-label>Girafa</ion-label>
+      <ion-label>Ornitorrinco</ion-label>
+      <ion-label>Guaxinim</ion-label>
+      <ion-label>Rinoceronte</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- ----------Perguntas de S/N---------- -->
+
+  <ion-item>
+    <ion-label>1 - O animal fica apenas em 4 patas?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta1">
+    <ion-radio value="sim1">Sim</ion-radio><br />
+    <ion-radio value="não1">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>2 - O animal é grande?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta2">
+    <ion-radio value="sim2">Sim</ion-radio><br />
+    <ion-radio value="não2">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>3 - O animal é doméstico?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta3">
+    <ion-radio value="sim3">Sim</ion-radio><br />
+    <ion-radio value="não3">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>4 - O animal possui penas?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta4">
+    <ion-radio value="sim4">Sim</ion-radio><br />
+    <ion-radio value="não4">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>5 - O animal possui marcas? (manchas ou listras)</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta5">
+    <ion-radio value="sim5">Sim</ion-radio><br />
+    <ion-radio value="não5">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>6 - O animal é noturno?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta6">
+    <ion-radio value="sim6">Sim</ion-radio><br />
+    <ion-radio value="não6">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>7 - O animal possui uma cauda longa?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta7">
+    <ion-radio value="sim7">Sim</ion-radio><br />
+    <ion-radio value="não7">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-item>
+    <ion-label>8 - O animal possui um focinho alongado?</ion-label>
+  </ion-item>
+  <ion-radio-group [(ngModel)]="pergunta8">
+    <ion-radio value="sim8">Sim</ion-radio><br />
+    <ion-radio value="não8">Não</ion-radio>
+  </ion-radio-group>
+
+  <ion-button id="open-toast" expand="block" (click)="animalCorreto()"
+    >Adivinhar</ion-button
+  >
+  <p>{{resposta}}</p>
+</ion-content>

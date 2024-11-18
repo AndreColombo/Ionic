@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Crypto Master </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Mensagem</ion-label>
+    <ion-input [(ngModel)]="message" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Chave Secreta</ion-label>
+    <ion-input [(ngModel)]="secretKey" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="encryptMessage()">Criptografar</ion-button>
+  <ion-button expand="full" (click)="decryptMessage()">Descriptografar</ion-button>
+
+  <ion-item>
+    <ion-label position="floating">Mensagem Criptografada</ion-label>
+    <ion-input [(ngModel)]="encryptedMessage" readonly></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Mensagem Descriptografada</ion-label>
+    <ion-input [(ngModel)]="decryptedMessage" readonly></ion-input>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Valor Total a Pagar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button routerLink="/"
+    ><ion-icon name="arrow-back-outline"></ion-icon>Voltar</ion-button
+  >
+  <div id="container">
+    <ion-item>
+      <ion-text>O valor total a ser pago é: R${{ valorFinal }}</ion-text>
+    </ion-item>
+  </div>
+</ion-content>

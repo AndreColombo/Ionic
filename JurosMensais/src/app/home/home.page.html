@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Juros Mensais FIAP </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-item>
+      <ion-input
+        label="Prestação"
+        labelPlacement="floating"
+        placeholder="Digite o valor da prestação"
+        type="number"
+        [(ngModel)]="prestacao"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Taxa de Juros (% ao mês)</ion-label>
+      <ion-range
+        min="1"
+        max="100"
+        [pin]="true"
+        [pinFormatter]="pinFormatter"
+        [(ngModel)]="taxaJuros"
+      ></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label
+        >Meses em Atraso <ion-icon name="calendar-outline"></ion-icon
+      ></ion-label>
+
+      <ion-range
+        min="1"
+        max="36"
+        [pin]="true"
+        [pinFormatter]="pinFormatter"
+        [(ngModel)]="mesesAtraso"
+      ></ion-range>
+    </ion-item>
+
+    <br />
+
+    <ion-button expand="block" (click)="calcularJuros()"
+      >Calcular <ion-icon name="calculator-outline"></ion-icon
+    ></ion-button>
+  </div>
+</ion-content>

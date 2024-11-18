@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Decrypt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="float">Nome Criptogafado: </ion-label>
+    <ion-label position="float">{{encryptedNome}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label position="float">Email Criptogafado: </ion-label>
+    <ion-label position="float">{{encryptedEmail}}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label position="float">Nota Criptogafada: </ion-label>
+    <ion-label position="float">{{encryptedNota}}</ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="float">Chave Secreta: </ion-label>
+    <ion-input [(ngModel)]="secretKey" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="decryptMessages()"
+    >Descriptografar Mensagem</ion-button
+  >
+
+  <ion-item>
+    <ion-label position="float">Nome Descriptogafado: </ion-label>
+    <ion-input [(ngModel)]="decryptedNome" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="float">Email Descriptogafado: </ion-label>
+    <ion-input [(ngModel)]="decryptedEmail" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="float">Nota Descriptogafada: </ion-label>
+    <ion-input [(ngModel)]="decryptedNota" readonly></ion-input>
+  </ion-item>
+</ion-content>

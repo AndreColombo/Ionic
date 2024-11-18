@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Ramo </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-range
+      [pin]="true"
+      [pinFormatter]="pinFormatter"
+      [min]="-10"
+      [max]="45"
+      [(ngModel)]="mes1"
+      label="Mês 1"
+    ></ion-range>
+
+    <ion-range
+      [pin]="true"
+      [pinFormatter]="pinFormatter"
+      [min]="-10"
+      [max]="45"
+      [(ngModel)]="mes2"
+      label="Mês 2"
+    ></ion-range>
+
+    <ion-range
+      [pin]="true"
+      [pinFormatter]="pinFormatter"
+      [min]="-10"
+      [max]="45"
+      [(ngModel)]="mes3"
+      label="Mês 3"
+    ></ion-range>
+
+    <ion-range
+      [pin]="true"
+      [pinFormatter]="pinFormatter"
+      [min]="-10"
+      [max]="45"
+      [(ngModel)]="mes4"
+      label="Mês 4"
+    ></ion-range>
+
+    <br />
+
+    <ion-button expand="block" (click)="calcMedia()">Calcular Média</ion-button>
+  </div>
+</ion-content>

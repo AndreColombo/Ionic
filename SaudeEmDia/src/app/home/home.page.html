@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Saúde em dia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-item>
+      <ion-input
+        type="number"
+        label="Peso (KG)"
+        labelPlacement="floating"
+        placeholder="Peso em KG"
+        [(ngModel)]="peso"
+      ></ion-input>
+    </ion-item>
+
+    <ion-range
+      labelPlacement="start"
+      label="Idade"
+      [pin]="true"
+      [pinFormatter]="pinFormatterIdade"
+      min="1"
+      max="100"
+      step="1"
+      [(ngModel)]="idade"
+    ></ion-range>
+    <ion-range
+      labelPlacement="start"
+      label="Altura (cm)"
+      [pin]="true"
+      [pinFormatter]="pinFormatterAltura"
+      min="50"
+      max="250"
+      step="1"
+      [(ngModel)]="altura"
+    ></ion-range>
+
+    <p>Sexo:</p>
+
+    <ion-radio-group value="start" [(ngModel)]="sexo">
+      <ion-radio value="f" justify="start" justify="end">Feminino</ion-radio
+      ><br />
+      <ion-radio value="m" justify="start" justify="end">Masculino</ion-radio>
+    </ion-radio-group>
+
+    <ion-button expand="block" (click)="calculaIMC()">
+      <ion-icon name="heart-circle-outline" slot="start"></ion-icon>
+      Minha Saúde
+    </ion-button>
+
+    <ion-label
+      [color]="imc<18.5?'primary':(imc<24.9?'success':(imc<29.9?'warning':'danger'))"
+      >IMC: {{imc}}
+    </ion-label>
+    <br />
+    <ion-label [color]="gcb<1800?'warning':(gcb<=2400?'success':'danger')"
+      >Gasto Calórico Basal: {{gcb}}
+    </ion-label>
+    <br />
+    <ion-label
+      [color]="massaMagra<30?'danger':(massaMagra<=40?'warning':'success')"
+      >Massa Muscular: {{massaMagra}}
+    </ion-label>
+    <br />
+    <ion-label [color]="pgc<16?'success':(pgc<30?'warning':'danger')"
+      >Gordura Corporal: {{pgc}}
+    </ion-label>
+    <br /><br />
+    <ion-label
+      >Conclusão:<br /><br />
+      {{mensagemFinal}}
+    </ion-label>
+  </div>
+</ion-content>

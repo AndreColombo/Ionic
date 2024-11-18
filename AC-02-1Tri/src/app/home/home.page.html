@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Blank </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title>Exercício 1</ion-title>
+
+  <ion-item>
+    <ion-input
+      label="Quilometragem"
+      labelPlacement="floating"
+      placeholder="Digite os quilômetros rodados"
+      [(ngModel)]="quilometros"
+      type="number"
+    >
+    </ion-input>
+  </ion-item>
+
+  <ion-radio-group [(ngModel)]="radioSelecionadaQ">
+    <ion-item> <ion-radio value="N">Normal</ion-radio> </ion-item>
+    <ion-item> <ion-radio value="S">Superior</ion-radio> </ion-item>
+    <ion-item> <ion-radio value="V">VIP</ion-radio> </ion-item>
+  </ion-radio-group>
+
+  <ion-button expand="block" (click)="calcularPreco()">
+    Valor da Viagem</ion-button
+  >
+
+  <ion-title>Exercício 2</ion-title>
+
+  <ion-item>
+    <ion-input
+      label="Quilometragem"
+      labelPlacement="floating"
+      placeholder="Digite a quilometragem rodada"
+      [(ngModel)]="quilometragem"
+      type="number"
+    >
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Valor Combustível"
+      labelPlacement="floating"
+      placeholder="Digite o valor do combustível escolhido"
+      [(ngModel)]="combustivel"
+      type="number"
+    >
+    </ion-input>
+  </ion-item>
+
+  <ion-radio-group [(ngModel)]="radioSelecionadaC">
+    <ion-item> <ion-radio value="E">Etanol</ion-radio> </ion-item>
+    <ion-item> <ion-radio value="G">Gasolina</ion-radio> </ion-item>
+    <ion-item> <ion-radio value="D">Diesel</ion-radio> </ion-item>
+  </ion-radio-group>
+
+  <ion-button expand="block" (click)="calcularValor()"> Combustível</ion-button>
+</ion-content>

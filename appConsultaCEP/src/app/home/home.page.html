@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>Fiap CEP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Buscar Endereço</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label position="floating">CEP*</ion-label>
+      <ion-input [(ngModel)]="cep" type="text" maxlength="8"></ion-input>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-label position="floating">Estado (UF) (opcional)</ion-label>
+      <ion-input [(ngModel)]="estado" type="text" maxlength="2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cidade*</ion-label>
+      <ion-input [(ngModel)]="cidade" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome da Rua*</ion-label>
+      <ion-input [(ngModel)]="rua" type="text"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="secondary" (click)="buscar()">Buscar</ion-button>
+  </ion-card>
+
+  <ion-list *ngIf="enderecos.length > 0">
+    <ion-item *ngFor="let endereco of enderecos">
+      <ion-label>
+        <h2>{{ endereco.logradouro || 'Logradouro não disponível' }}</h2>
+        <p>
+          {{ endereco.bairro || 'Bairro não disponível' }} - {{
+          endereco.localidade || endereco.cidade }} / {{ endereco.uf }}
+        </p>
+        <p *ngIf="endereco.cep">CEP: {{ endereco.cep }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="enderecos.length === 0 && pesquisaRealizada">
+    <ion-label>
+      <p>Nenhum endereço encontrado.</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

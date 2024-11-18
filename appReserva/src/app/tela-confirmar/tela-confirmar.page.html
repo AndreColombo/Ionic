@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>tela-confirmar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-title>Confirme os valores</ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-label> Valor da Diária: {{valorDiaria}} </ion-label>
+    <ion-label> Quantidade de Dias: {{dias}} </ion-label>
+    <ion-label> Valor Total: {{total}} </ion-label>
+  </ion-item>
+  <ion-button expand="block" routerLink="/">Voltar</ion-button>
+  <ion-button expand="block" (click)="confirmar()">Confirmar</ion-button>
+</ion-content>
